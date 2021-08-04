@@ -301,6 +301,11 @@ function updateGrid(entity) {
 
 function onClick(grid) {
 	var off = grid.children[1].className.startsWith('state off')
+	if(off == true){
+		grid.classList.add('entity-off');
+	}else{
+		grid.classList.add('entity-off');
+	}
 	if (grid.className == 'entity cover') {
 		var service = off ? 'close_cover' : 'open_cover'
 	} else if (grid.className == 'entity vacuum') {
@@ -616,7 +621,7 @@ function sensorOverflow(type, value) {
 	var range = _SENSOR_RANGES[type]
 	if (range) {
 		if (value >= range[1])
-			return ' critical'
+		return ' critical'
 		else if (value >= range[0])
 			return ' caution'
 	}

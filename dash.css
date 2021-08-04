@@ -1,16 +1,59 @@
+.sidebar{
+	background: rgba(255,255,255,.31);
+	position:fixed;
+	top:0;
+	left:0;
+	width:300px;
+	height:100%;
+}
+#content{
+	overflow-y:scroll;
+	position:absolute;
+	top:20vh;
+	left:330px;
+	width:calc(100% - 400px);
+}
 .entity {
+	position:relative;
+        background:rgba(255,255,255,.21)!important;
 	float: left;
-	width: 120px;
-	height: 120px;
-	margin: 2px;
+	width: 110px;
+	height: 110px;
+	margin: 8px;
 	color: white;
 	font-size: 14px;
 	font-weight: 300;
-	text-align: center;
+	border-radius:38px;
+	/*text-align: center;*/
 	/*K border-radius: 5px;
 	position: relative;*/
 }
 
+.opened{
+	background:rgba(255,255,255,.77)!important;
+	color:#292929!important;
+}
+.header{
+	position:absolute;
+	top:10vh;
+	left:330px;
+}
+.home-title{
+	font-size:35px;
+}
+.sidebar-room{
+	margin-top:100px;
+	list-style:none;
+}
+.sidebar-room li{
+	height:50px;
+	line-height:50px;
+	color:#636363;
+}
+.entity-toggled{
+	background:rgba(255,255,255,.77)!important;
+	
+}
 .camera {
 	background-size: cover;
 	background-position: center;
@@ -81,6 +124,9 @@
 .climate {
 	background-color: #8bc34a;
 }
+.climate{
+width:238px;
+}
 
 .group {
 	background-color: #3f51b5;
@@ -88,11 +134,14 @@
 
 .name,
 .extra {
-	height: 34px;
-	line-height: 34px;
+	font-weight:bold;
+	bottom:24px;
+	max-width:70px;
 	overflow: hidden;
-	text-overflow: clip;
+	position:absolute;
+	text-overflow: ellipsis;
 	white-space: nowrap;
+	padding-left:18px;
 }
 
 .noname {
@@ -101,14 +150,23 @@
 }
 
 .state {
-	height: 52px;
-	line-height: 52px;
+	position:absolute;
+	top:20px;
+	left:18px;
+	height: 30px;
+	line-height: 30px;
 	overflow: hidden;
-	font-size: 44px;
+	font-size: 20px;
+	text-overflow: ellipsis;
+	white-space:nowrap;
+	max-width:80px;
+}
+.state i{
+	font-size:26px;
 }
 
 .nan {
-	font-size: 36px;
+	font-size:;
 }
 
 .off {
@@ -155,11 +213,14 @@
 }
 
 body {
-	margin: 0;
-	color: white;
-	font-family: Helvetica;
-	background: url(https://cdn.jsdelivr.net/gh/bochili/cdn3/%E7%9F%A9%E5%BD%A2%201.png);
+	background-size:110%;        
+        margin: 0;
+        color: white; 
+        font-family: Helvetica; 
+	background: url(https://cdn.jsdelivr.net/gh/bochili/cdn3/%E7%9F%A9%E5%BD%A2%201.png); 
 	-webkit-user-select: none;
+	background-position-y: -120px;
+	background-attachment:fixed;
 }
 
 #loading {
